@@ -1,47 +1,42 @@
-import React from 'react';
-import {
-  Route,
-  Switch
-} from 'react-router-dom'
 
-import {
-  Home,
-  Sushi,
-  Sweet_buns,
-  Soup,
-  Cakes,
-  Cold_Beverages,
-  Hot_Beverages,
- 
-} from './pages'
+import FileUpload from "./components/fileupload";
+import {useEffect,useState }from 'react'
 import Layout from './components/layout'
-import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
-
-
+import axios from 'axios';
+import Home from './layout/Home'
 
 function App() {
+  const [backenddata, setBackenddata] = useState([]);
 
   
+  function fetchData() {
+     
+     fetch(`http://localhost:4000/getAlluser`)
+     .then(res=>res.json())
+     .then(data=>setBackenddata(data.result))
+     console.log(backenddata)
+  }
+  const handleoneuser= (n)=> {
+   
+     fetch(`http://localhost:4000/getuser/${n}`)
+     .then(res=>res.json())
+     .then(data=>console.log(data.result))
+     
+  }
+const handleClick = ()=>{
+  fetchData();
+
+}
+
   return (
-    <div className="App  ">
-  <div className="App">
-      <Layout>
-        <Switch>
-          <Route exact path='/' component={Home} />
-           <Route  path='/sushi' component={Sushi} />
-          <Route  path='/sweet_buns' component={Sweet_buns} />
-          <Route  path='/soup' component={Soup} />
-          <Route  path='/cakes' component={Cakes} />
-          <Route  path='/cold_beverages' component={Cold_Beverages} />
-          <Route  path='/hot_beverages' component={Hot_Beverages} />
-         
-        </Switch>
-      </Layout>
-    </div>
+ 
+     <Layout>
+   
   
-    </div>
-    
+    <Home/>
+  
+      
+    </Layout>
   );
 }
 

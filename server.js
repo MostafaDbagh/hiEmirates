@@ -1,52 +1,31 @@
 const express = require('express')
-const bodyParser = require('body-parser')
-const cors = require('cors')
-const path = require('path')
 const app = express()
-const mongoose = require('mongoose')
-const apiPort = process.env.PORT|| 3005
+const path = require('path')
+const cors = require("cors");
+const multer  = require('multer');
+const Db = require('./Db/db')
+const route = require('./route/route')
+app.use(cors());
+app.use(express.static("./public"))
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use(express.static(path.join(__dirname ,'uploads')));
+ app.use('/',route)
 
 
-const router = require('./routes/review-route')
 
 
-mongoURI='mongodb+srv://safi:35064612@cluster0-ags3s.mongodb.net/message?retryWrites=true&w=majority'
-mongoose.connect(mongoURI||'mongodb://127.0.0.1:27017/fuckoff',{useNewUrlParser:true,useUnifiedTopology: true})
-.catch((err)=>{
-    console.log(`an error was occure ${err}`)
-})
-mongoose.connection.on('connected',()=>{
-    console.log('you are connecting to database') 
-})
-mongoose.connection.on('error',(err)=>{
-    console.log('connection failed to database',err.message)
-})
-///////////////////////
-mongoURI='mongodb+srv://safi:35064612@cluster0-ags3s.mongodb.net/subscribe?retryWrites=true&w=majority'
-mongoose.connect(mongoURI||'mongodb://127.0.0.1:27017/fuckoff',{useNewUrlParser:true,useUnifiedTopology: true})
-.catch((err)=>{
-    console.log(`an error was occure ${err}`)
-})
-mongoose.connection.on('connected',()=>{
-    console.log('you are connecting to database') 
-})
-mongoose.connection.on('error',(err)=>{
-    console.log('connection failed to database',err.message)
-})
-
-
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(cors())
-app.use(bodyParser.json())
-
-
-app.use('/api',router)
-if(process.env.NODE_ENV ==='production'){
+ 
+ if(process.env.NODE_ENV ==='production'){
     app.use(express.static('client/build'))
     app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
       });
 }
 
+  
 
-app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
+
+const PORT = 4000;
+app.listen(PORT, () => console.log(`Server is running at port ${PORT}`))

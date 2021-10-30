@@ -1,85 +1,20 @@
-import React, { useState } from 'react';
-import {Link} from 'react-router-dom'
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
 
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText
-} from 'reactstrap';
-import {Commondiv} from '../style/navbarstyle'
-const Example = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
+import {Nav,Unorderlist,List,Anchor } from '../style/headerstyle'
+const Navbar = () => {
+    return ( 
+        <Nav>
+<Unorderlist>
+    <List><Anchor href="/">الرئيسية</Anchor></List>
+    <List><Anchor href="#">اخر الأخبار</Anchor></List>
+    <List><Anchor href="#">أنواع السكن</Anchor></List>
+    <List><Anchor href="/about">خدمات أخرى</Anchor></List>
+    <List><Anchor href="/intro" > من نحن</Anchor></List>
+    <List><Anchor href="/contact">اتصل بنا</Anchor></List>
 
-  const toggle = () => setIsOpen(!isOpen);
-
-  return (
-    <Commondiv>
-      <Navbar color="dark" dark  expand="md">
-        <NavbarBrand href="/" style={{fontFamily:"lobster,sans-serif",color:"rgb(255,243,191)"}}>Yamazaki Menu</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mx-auto" navbar>
-            <NavItem>
-            <Link style={{ textDecoration: "none", }} to ="/sushi">
-            <NavLink >SUSHI</NavLink>
-            </Link>
-           
-            </NavItem>
-            <NavItem>
-           <Link style={{ textDecoration: "none", }}  to="/sweet_buns">
-           <NavLink >
-             SWEET BUNS</NavLink>
-             </Link>
-            </NavItem>
-      
-            <NavItem>
-          
-              <Link style={{ textDecoration: "none", }} to="/soup"> 
-               <NavLink >SOUP  </NavLink>
-               </Link>
-            
-            </NavItem>
-
-            <NavItem>
-          
-              <Link style={{ textDecoration: "none", }} to ="/cakes">
-              <NavLink >
-                CAKES
-                </NavLink>
-                </Link>
-            
-            </NavItem>
-            <NavItem>
-         
-              <Link style={{ textDecoration: "none", }} to="/cold_beverages">
-              <NavLink >  C-BEVERAGES   </NavLink>
-              </Link>
-            
-            </NavItem>
-            <NavItem>
-             <Link style={{ textDecoration: "none", }} to="/hot_beverages">  <NavLink >H-BEVERAGES </NavLink></Link>    
-            </NavItem>
-            <NavItem>
-            
-              <Link style={{ textDecoration: "none", }}  to="/others">
-              <NavLink >   OTHERS </NavLink></Link>       
-            </NavItem>
-          
-          </Nav>
-          
-        </Collapse>
-      </Navbar>
-      </Commondiv>
-  );
+  
+    </Unorderlist>
+</Nav>
+     );
 }
-
-export default Example;
+ 
+export default Navbar;

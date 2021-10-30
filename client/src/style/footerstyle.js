@@ -1,46 +1,22 @@
 import styled from 'styled-components'
 
-const Footercon = styled.div`
 
-
-margin:0 auto;
-background:#443634;
-color:white;
-border-radius:20px;
-position:relative;
-
-
-`
-const Footerdiv = styled.div`
-height:400px;
-display:grid;
-grid-template-columns:1fr 1fr 1fr;
-align-content:center;
-grid-row-gap:10px;
-@media(max-width:968px){
-    height:auto;
-    grid-template-columns:1fr;
-    grid-template-rows:1fr 1fr 1fr;
-}
-`
-const Anchor = styled.a`
-color:rgb(251,145,163)
-`
-const SmallFooterdiv = styled.div`
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-
-
-`
-const Footerpara = styled.div`
+export const Footersec = styled.footer`
 width:100%;
-position:absolute;
-left:50%;
-bottom:10px;
-text-align:center;
-transform:translateX(-50%)
+height:70px;
+text-align:end;
+font-familly:Cairo,sans-serif;
+line-height:70px;
+background:rgb(0,15,25);
+color:rgb(172,173,177);
+font-family:tajawal,sans-serif;
 
 `
-export{Footerdiv,SmallFooterdiv,Footercon,Footerpara,Anchor}
+export const Footerp =styled.p`
+margin:0 50px
+
+`
+export const FooterA=styled.a`
+text-decoration:none;
+color:rgb(191,214,48)
+`

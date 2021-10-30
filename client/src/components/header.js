@@ -1,32 +1,38 @@
-import React from 'react';
-import {Div,Asidiv,Numberfont,Descdiv,Logodiv2} from './../style/headerstyle'
-import Yamazaki from './../images/yamazaki.png'
-import {Commondiv} from '../style/navbarstyle'
-const Header = () => {
-    return ( 
-<Commondiv>
-        <Div>
-            <Asidiv>
-                <p>Dubai-Century Mall</p>
-                <Numberfont>04-309-8507</Numberfont>
-            </Asidiv>
-<Logodiv2 >
- 
-    <img src={Yamazaki} alt="nova Logo" width="330px" height="110px" style={{margin:"0 auto"}} ></img>
-        <Descdiv>
-            <div style={{width:"100%",fontSize:"16px",letterSpacing:"1px"}}>PASTERY CAKE  --  SUSHI -- RAMEN & MORE</div>
-        </Descdiv>
- 
-      
-      </Logodiv2>
-      <Asidiv>
-                <p>Alain-Khalifa Street</p>
-                <Numberfont>03-766-8580</Numberfont>
-            </Asidiv>
+import {Column,Header,Logo,Phone,Mail,Divbutton,Button } from '../style/headerstyle'
+import Navbar from './Navbar'
+import {useState} from 'react'
 
-        </Div>
-        </Commondiv>
-     );
+
+const NavSec = () => {
+const [isClicked,setClicked] = useState(false);
+    return (
+<Header>
+    <Column>
+    <Logo>
+  Space Y
+    </Logo>
+    <Phone>
+     
+     <span>+971586057772</span>  
+    </Phone>
+    <Mail>
+ 
+     <span>mostafadbagh52@gmail.com</span>  
+    </Mail>
+
+    <Divbutton >
+    <Button onClick={()=>setClicked(!isClicked)}>
+     x
+    </Button>
+    </Divbutton>
+</Column>
+
+
+    {isClicked ? <Navbar/>: null }
+  
+     </Header>
+      );
 }
  
-export default Header;
+export default NavSec;
+
