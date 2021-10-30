@@ -44,7 +44,7 @@ const FileUpload =()=>{
    data.append('Personalimage',file);
    data.append('FPP',pp);
    data.append('BPP',Bpp);
-   axios.post('https://dashboard.heroku.com//adduser',data).then(res=>res.json(res))
+   axios.post('http://localhost:4000/adduser',data).then(res=>res.json(res))
         } else {
           const errorData = {};
           for (let item of error.details) {
