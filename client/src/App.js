@@ -1,8 +1,8 @@
 import React from 'react';
 import {useState }from 'react'
 import Home from './layout/Home'
-import  Headersec  from "./components/Header";
-import Footer  from "./components/footer";
+import  Headersec  from './components/header'
+import Footer  from './components/footer'
 
 function App() {
   const [backenddata, setBackenddata] = useState([]);
