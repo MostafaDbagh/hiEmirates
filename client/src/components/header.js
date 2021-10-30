@@ -1,5 +1,5 @@
 import {Column,Header,Logo,Phone,Mail,Divbutton,Button } from '../style/headerstyle'
-import Navbar from './Navbar'
+import Navbar from './navbar'
 import {useState} from 'react'
 
 
