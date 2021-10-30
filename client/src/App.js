@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState }from 'react'
 import Home from './layout/Home'
-import  Header  from "./components/Header";
+import  Headersec  from "./components/Header";
 import Footer  from "./components/footer";
 
 function App() {
@@ -29,7 +29,7 @@ const handleClick = ()=>{
 
   return (
  <>
-     <Header/>
+     <Headersec/>
     <Home/>
     <Footer/>
     </>
