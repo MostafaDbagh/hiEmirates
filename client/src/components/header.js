@@ -3,7 +3,7 @@ import Navbar from './Navbar'
 import {useState} from 'react'
 
 
-const NavSec = () => {
+const Headersec = () => {
 const [isClicked,setClicked] = useState(false);
     return (
 <Header>
@@ -34,5 +34,5 @@ const [isClicked,setClicked] = useState(false);
       );
 }
  
-export default NavSec;
+export default Headersec;
 

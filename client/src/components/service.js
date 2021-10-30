@@ -1,3 +1,4 @@
+import React from 'react';
 import {Commondiv,H2,Card,Button,H3,P}from '../style/servicestyle'
 const Service  = () => {
    

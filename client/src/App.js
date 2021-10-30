@@ -1,9 +1,8 @@
-
-import FileUpload from "./components/fileupload";
-import {useEffect,useState }from 'react'
-import Layout from './components/layout'
-import axios from 'axios';
+import React from 'react';
+import {useState }from 'react'
 import Home from './layout/Home'
+import  Header  from "./components/Header";
+import Footer  from "./components/footer";
 
 function App() {
   const [backenddata, setBackenddata] = useState([]);
@@ -29,14 +28,11 @@ const handleClick = ()=>{
 }
 
   return (
- 
-     <Layout>
-   
-  
+ <>
+     <Header/>
     <Home/>
-  
-      
-    </Layout>
+    <Footer/>
+    </>
   );
 }
 
