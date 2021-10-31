@@ -25,7 +25,7 @@ const Subscribe = () => {
     setContact({...contact,isClicked:true})
     const { error } = result;
     if (!error) {
-axios.post('http://localhost:4000/addquery',contact).then(res=>res.json(res))
+axios.post('https://hellouae.herokuapp.com/addquery',contact).then(res=>res.json(res))
     } else {
       const errorData = {};
       for (let item of error.details) {
