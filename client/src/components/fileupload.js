@@ -44,7 +44,7 @@ const FileUpload =()=>{
    data.append('Personalimage',file);
    data.append('FPP',pp);
    data.append('BPP',Bpp);
-   axios.post('https://hellouae.herokuapp.com//adduser',data).then(res=>res.json(res))
+   axios.post('https://hellouae.herokuapp.com/adduser',data).then(res=>res.json(res))
         } else {
           const errorData = {};
           for (let item of error.details) {
