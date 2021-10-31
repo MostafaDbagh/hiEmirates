@@ -3,6 +3,7 @@ import { useState } from 'react';
 import{Div,Anchorsocial,Li,Registerinput,Textare} from '../style/subscribestyle'
 import axios from 'axios';
 import Joi from "joi-browser";
+import { useTheme } from 'styled-components';
 
 const Subscribe = () => {
     const [errors, setErrors] = useState({});
@@ -11,8 +12,9 @@ const Subscribe = () => {
       whatsapp:'',
       fb:'',
       msg:'',
-      isClicked:false
   })
+  let [isClicked,setIsclicked]= useState(true)
+  
   const schema = {
     email: Joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }).required(),
     whatsapp: Joi.string().required(),
@@ -22,10 +24,10 @@ const Subscribe = () => {
   };
   const handleClick =async ()=>{
    const result = Joi.validate(contact,schema, { abortEarly: false });
-    setContact({...contact,isClicked:true})
+    
     const { error } = result;
     if (!error) {
-axios.post('https://hellouae.herokuapp.com/addquery',contact).then(res=>res.json(res))
+     axios.post('https://hellouae.herokuapp.com/addquery',contact).then(res=>res.json(res))
     } else {
       const errorData = {};
       for (let item of error.details) {
@@ -39,7 +41,7 @@ axios.post('https://hellouae.herokuapp.com/addquery',contact).then(res=>res.json
        alert(errorData[index])
      }
     }
-
+setIsclicked(false)
   }
 
  
@@ -51,7 +53,7 @@ axios.post('https://hellouae.herokuapp.com/addquery',contact).then(res=>res.json
                 <Registerinput type="text" placeholder="ادخل رقم تواصل الواتساب "onChange={(e)=>setContact({...contact,whatsapp:e.target.value})}   />
                 <Registerinput type="text" placeholder="ادخل حساب الفيس البوك " onChange={(e)=>setContact({...contact,fb:e.target.value})}  />
                 <Textare cols="39" rows="5" placeholder="اكتب جميع استفساراتك هنا "onChange={(e)=>setContact({...contact,msg:e.target.value})} ></Textare>
-                <button disabled={contact['isClicked']}  onClick={()=>handleClick()}style={{width:'300px',height:"40px",padding:'6px 12px',margin:'12px 0 12px',background:'rgb(191,214,48)',border:'none',color:'white',fontFamily: 'Almarai, sans-serif',fontSize:'18px'}}> ارسال</button>
+                <button disabled={isClicked}  onClick={()=>handleClick()}style={{width:'300px',height:"40px",padding:'6px 12px',margin:'12px 0 12px',background:'rgb(191,214,48)',border:'none',color:'white',fontFamily: 'Almarai, sans-serif',fontSize:'18px'}}> ارسال</button>
             </div>
             
             <div>
