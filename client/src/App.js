@@ -1,9 +1,8 @@
 import React from 'react';
 import {useState }from 'react'
 import Home from './layout/Home'
-import  Headersec  from './components/header'
-import Footer  from './components/footer'
-
+import Customerdetails from './layout/custmerdetails';
+import {Switch,Route} from 'react-router-dom'
 function App() {
   const [backenddata, setBackenddata] = useState([]);
 
@@ -28,11 +27,10 @@ const handleClick = ()=>{
 }
 
   return (
- <>
-     <Headersec/>
-    <Home/>
-    <Footer/>
-    </>
+ <Switch>
+   <Route path="/" exact component={Home}/>
+   <Route path="/CustomerDetails" exact component={Customerdetails}/>
+    </Switch>
   );
 }
 

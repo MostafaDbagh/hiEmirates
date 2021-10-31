@@ -1,14 +1,16 @@
 import React from 'react'
-
-import {
-    BrowserRouter as Router,
-} from 'react-router-dom'
+import Headersec from './header'
+import Footer from './footer'
 
 
-export default ({children})=>{
+
+const Layout =  ({children})=>{
     return (
         <>
-       
+        <Headersec/>
+       {children}
+        <Footer/>
         </>
     )
 }
+export default Layout;
