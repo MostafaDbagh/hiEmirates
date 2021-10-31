@@ -27,7 +27,9 @@ const Subscribe = () => {
     
     const { error } = result;
     if (!error) {
+      alert('before axios')
      axios.post('https://hellouae.herokuapp.com/addquery',contact).then(res=>res.json(res))
+     alert('after axios')
     } else {
       const errorData = {};
       for (let item of error.details) {
