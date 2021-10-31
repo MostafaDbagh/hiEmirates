@@ -33,7 +33,6 @@ const FileUpload =()=>{
       const validateForm = (event) => {
         event.preventDefault();
         const result = Joi.validate(text,schema, { abortEarly: false });
-       
         const { error } = result;
         if (!error) {
             const data = new FormData();
@@ -152,3 +151,4 @@ const FileUpload =()=>{
 
  
 export default FileUpload;
+

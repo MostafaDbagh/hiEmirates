@@ -89,7 +89,6 @@ route.post('/adduser',cpUpload , (req,res)=>{
      let email = req.body.Email;
      let phone = req.body.phone;
      let address = req.body.address;
-     console.log(req.files,req.body)
      let Personalimage= req.files.Personalimage[0].filename;
      let fpp = req.files.FPP[0].filename;
       let Bpp = req.files.BPP[0].filename;
