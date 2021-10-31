@@ -94,7 +94,7 @@ route.post('/adduser',cpUpload , (req,res)=>{
       let Bpp = req.files.BPP[0].filename;
    let sql = `INSERT INTO users(Username,Email,Phone,address, Fpassport ,Bpassport,Personalimage) VALUES (?,?,?,?,?,?,?)`
     db.query(sql, [name,email,phone,address,Personalimage,fpp,Bpp], (err, result) => {
-            if (err) throw err
+            if (err) console.log("there is error")
             console.log("data uploaded")
         })
  
