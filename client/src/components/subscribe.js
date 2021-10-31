@@ -13,7 +13,7 @@ const Subscribe = () => {
       fb:'',
       msg:'',
   })
-  let [isClicked,setIsclicked]= useState(true)
+  let [isClicked,setIsclicked]= useState(false)
   
   const schema = {
     email: Joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }).required(),
@@ -43,7 +43,7 @@ const Subscribe = () => {
        alert(errorData[index])
      }
     }
-setIsclicked(false)
+setIsclicked(true)
   }
 
  
