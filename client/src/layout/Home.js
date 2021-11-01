@@ -8,10 +8,12 @@ const Home = () => {
     return ( 
    <>
  <Layout>
+
      <MainImageSlider/>
      <Service/>
      <FileUpload/>
      <Subscribe/>
+     
      </Layout>
         </>
         
