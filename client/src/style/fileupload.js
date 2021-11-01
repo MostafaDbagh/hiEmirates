@@ -49,7 +49,6 @@ position:absolute;
 left:30%;
 margin-bottom:32px;
 font-family: 'Almarai', sans-serif;
-border:2px solid rgb(16,30,40);
 font-weight:bold;
 
 

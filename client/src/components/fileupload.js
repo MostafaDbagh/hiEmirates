@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useRef, useState} from 'react'
 import { Contaier,Form,Div ,Fileinputcontainer,Label,Button} from '../style/fileupload';
 import {Contactinput,} from '../style/layoutstyle'
 import {H2,Headign2,Ul,List,Paragraph}from '../style/servicestyle'
@@ -6,15 +6,22 @@ import axios from 'axios';
 import Joi from "joi-browser";
  
 const FileUpload =()=>{
-
- 
+   const messagestyle={
+     width:"70%",
+     color:'rgb(10,183,255)',
+     margin: '24px 30px 0 30px',
+     textAlign:'center',
+     display:'none',
+     fontFamily: 'El Messiri, sans-serif'
+   }
+      const [isclicked ,setIsclicked] = useState(false)
       let [post,setPost] = useState({
         text:"",
         title:""
       })
       const [errors, setErrors] = useState({});
       let [file, setFile] = useState();
-
+      
       let [pp, setP] = useState();
       let [Bpp, setBP] = useState();
       let [text,setText] =useState({
@@ -23,6 +30,7 @@ const FileUpload =()=>{
         phone:'',
         address:''
       })
+      const messageRef = useRef();
       const schema = {
         name: Joi.string().min(1).max(30).required(),
         Email: Joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }).required(),
@@ -43,7 +51,19 @@ const FileUpload =()=>{
    data.append('Personalimage',file);
    data.append('FPP',pp);
    data.append('BPP',Bpp);
-   axios.post('https://hellouae.herokuapp.com/adduser',data).then(res=>res.json(res))
+   axios.post('https://hellouae.herokuapp.com/adduser',data)
+  setIsclicked(true)
+   setText({
+    name:'',
+    Email:'',
+    phone:'',
+    address:''
+   })
+   messageRef.current.style.display="block"
+   setTimeout(() => {
+    messageRef.current.style.display="none"
+   }, 3000);
+
         } else {
           const errorData = {};
           for (let item of error.details) {
@@ -95,22 +115,22 @@ const FileUpload =()=>{
   
   <Fileinputcontainer>
   <Label style={{direction:'rtl'}} >الرجاء ادخال صورة شخصية ذات خلفية بيضاء</Label> 
-    <Contactinput type="text"  placeholder="الرجاء ادخال الاسم" id="name" onChange={(e)=> setText({...text,name:e.target.value})}/>   
+    <Contactinput type="text" value={text['name']}  placeholder="الرجاء ادخال الاسم" id="name" onChange={(e)=> setText({...text,name:e.target.value})}/>   
     </Fileinputcontainer>
 
     <Fileinputcontainer>
     <Label style={{direction:'rtl'}} >الرجاء ادخال صورة شخصية ذات خلفية بيضاء</Label> 
-    <Contactinput type="text"  placeholder="الرجاء ادخال رقم الموبايل" id="phone" onChange={(e)=> setText({...text,phone:e.target.value})}/>
+    <Contactinput type="text" value={text['phone']} placeholder="الرجاء ادخال رقم الموبايل" id="phone" onChange={(e)=> setText({...text,phone:e.target.value})}/>
     </Fileinputcontainer>
 
     <Fileinputcontainer>
     <Label style={{direction:'rtl'}} >الرجاء ادخال صورة شخصية ذات خلفية بيضاء</Label> 
-    <Contactinput type="text"  placeholder="الرجاء ادخال عنوان السكن" id="address" onChange={(e)=> setText({...text,address:e.target.value})}/>
+    <Contactinput type="text"  value={text['address']} placeholder="الرجاء ادخال عنوان السكن" id="address" onChange={(e)=> setText({...text,address:e.target.value})}/>
     </Fileinputcontainer>
     
     <Fileinputcontainer>
     <Label style={{direction:'rtl'}} >الرجاء ادخال صورة شخصية ذات خلفية بيضاء</Label> 
-    <Contactinput type="text"  placeholder="الرجاء ادخال ايميل" id="email" onChange={(e)=> setText({...text,Email:e.target.value})}/>
+    <Contactinput type="text" value={text['Email']} placeholder="الرجاء ادخال ايميل" id="email" onChange={(e)=> setText({...text,Email:e.target.value})}/>
     </Fileinputcontainer>
 
     <Fileinputcontainer>
@@ -139,9 +159,9 @@ const FileUpload =()=>{
       setBP(file)
     } }/>     
     </Fileinputcontainer>
-    <Button type="submit" value="تسجيل" />
+    <Button disabled={isclicked} type="submit" value="تسجيل" />
   </div>
-
+<span style={messagestyle} ref={messageRef}>شكرا لكم. لقد تم تسجيل طلبكم بنجاح</span>
 </Form>
 
 </Contaier>
