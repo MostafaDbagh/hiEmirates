@@ -203,9 +203,13 @@ border-radius:10px;
 font-size:14px;
 font-style:italic;
 box-shadow:-1px 0px 1px 0px rgb(214,291,48 )inset  ;
-
+cursor:pointer;
 letter-spacing:1px;
-font-family: 'Almarai, sans-serif'
+font-family: 'Almarai, sans-serif';
+&:hover{
+    cursor:pointer;
+    border:1px solid rgb(10,183,255); 
+}
 
 `
 export const H3 = styled.h3`
@@ -225,6 +229,7 @@ background:rgb(191,214,48);
 left:115px;
 top:55px;
 }
+
 
 `
 export const  P = styled.p`

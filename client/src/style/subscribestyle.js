@@ -61,10 +61,14 @@ margin:6px 0;
 }
 `
 export const Textare= styled.textarea`
-margin:8px auto;
+width:286px;
+height:76;
+padding:10px;
+margin:4px auto;
 &::placeholder{
     font-family: 'El Messiri', sans-serif;
 }
+
 `
 
 
@@ -98,4 +102,21 @@ align-items:center;
 position:relative;
 margin:8px
 padding:15px;
+`
+export const Button = styled.button`
+width:300px;
+height:40px;
+padding:6px 12px;
+margin:8px 0 12px;
+background: rgb(10,183,255);
+border:none;
+color:white;
+font-family: Almarai, sans-serif;
+font-size:18px;
+font-weight:600;
+&:hover{
+    
+    cursor:pointer;
+    transition:.5s ease;
+}
 `

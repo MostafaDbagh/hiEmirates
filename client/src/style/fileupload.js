@@ -38,7 +38,7 @@ bottom:75px;
 font-family: 'El Messiri', sans-serif;
 `
 export const Button = styled.input`
-background:rgb(191,214,48);
+background: rgb(10,183,255);
 width:140px;
 hieght:50px;
 padding:12px 24px;
@@ -50,6 +50,12 @@ left:30%;
 margin-bottom:32px;
 font-family: 'Almarai', sans-serif;
 font-weight:bold;
+oulline:1px solid black;
+&:hover{
+    
+    transition:0.5s ease;
+    cursor:pointer;
+}
 
 
 `
