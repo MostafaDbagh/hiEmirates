@@ -3,7 +3,11 @@ import React from 'react';
 
 const Rent = () => {
     return ( 
+        <>
         <h1>Rent Page</h1>
+
+        <h1>hi safi</h1>
+        </>
      );
 }
  
