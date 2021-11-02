@@ -80,7 +80,7 @@ route.post('/addquery',(req,res)=>{
   console.log(email,whatsapp,fb,msg )
   let sql = `INSERT INTO querys(email,whatsapp,fb, msg) VALUES (?,?,?,?)`
   db.query(sql, [email,whatsapp,fb,msg], (err, result) => {
-          if (err) throw err
+          if (err) console.log("there is error")
           console.log("data uploaded")
       })
 })
