@@ -39,7 +39,8 @@ const Subscribe = () => {
     if (!error) {
  
      axios.post('https://hellouae.herokuapp.com/addquery',contact)
-     msgRef.current.style.display="block"
+     msgRef.current.style.display="block";
+     setIsclicked(true)
      setTimeout(() => {
       setContact({
         email:'',
@@ -48,6 +49,7 @@ const Subscribe = () => {
         msg:'',
       })
       msgRef.current.style.display="none"
+     
      }, 3000);
  
     } else {
@@ -63,7 +65,7 @@ const Subscribe = () => {
        alert(errorData[index])
      }
     }
-setIsclicked(true)
+
   }
 
  
