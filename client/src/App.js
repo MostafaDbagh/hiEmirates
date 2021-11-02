@@ -42,7 +42,7 @@ const handleClick = ()=>{
     <Layout>
  <Switch>
    <Route path="/" exact component={Home}/>
-   <Route path="https://hellouae.herokuapp.com/Aboutus"  component={AboutPage}/>
+   <Route path="https://hellouae.herokuapp.com/Aboutus" exact component={AboutPage}/>
    <Route path="https://hellouae.herokuapp.com/Contact"  component={Contact}/>
    <Route path="https://hellouae.herokuapp.com/customerDetails"  component={Customerdetails}/>
    <Route path="https://hellouae.herokuapp.com/News"  component={News}/>
