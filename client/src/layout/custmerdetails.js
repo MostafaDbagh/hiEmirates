@@ -11,7 +11,7 @@ const Customerdetails  = () => {
 
     return (  
         <div>
-          <button onClick={()=>handleoneuser(5)}/>
+          <button onClick={()=>handleoneuser(5)}> fetch</button>
           <h1>Customer Details</h1>  
           <p></p>
           <p></p>
