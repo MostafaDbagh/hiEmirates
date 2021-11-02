@@ -5,7 +5,7 @@ const Customerdetails  = () => {
 
   const handleoneuser= (n)=> {
     fetch(`https://hellouae.herokuapp.com/getuser/${n}`)
-    .then(res=>res.text())
+    .then(res=>res.json())
     .then(data=>console.log(data.result))
     
  }
