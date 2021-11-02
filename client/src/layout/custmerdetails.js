@@ -18,7 +18,9 @@ const Customerdetails  = () => {
           <p>{"Email"+customer.Email}</p>
           <p>{"Phone"+customer.Phone}</p>
           <p>{"address"+customer.address}</p>
-          
+          <img src={"../../../uploads/"+customer.Personalimage}></img>
+          <img src={}></img>
+          <img src={}></img>
           
         </div>
     );
