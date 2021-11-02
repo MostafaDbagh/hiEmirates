@@ -23,10 +23,11 @@ const Customerdetails  = () => {
           <button onClick={()=>handleoneuser(5)}> fetch</button>
           <button onClick={()=>console.log(customer)}> get</button>
           <h1>Customer Details</h1>  
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
+          <p>{customer.Username}</p>
+          <p>{customer.Email}</p>
+          <p>{customer.Phone}</p>
+          <p>{customer.address}</p>
+  
           
         </div>
     );
