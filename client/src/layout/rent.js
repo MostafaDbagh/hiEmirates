@@ -4,9 +4,22 @@ import React from 'react';
 const Rent = () => {
     return ( 
         <>
-        <h1>Rent Page</h1>
-
-        <h1>hi safi</h1>
+        <div>
+        <h1>Bed space</h1>
+        <p></p>
+        </div>
+        <div>
+        <h1>Partition</h1>
+        <p></p>
+        </div>
+        <div>
+        <h1>Master Bedroom</h1>
+        <p></p>
+        </div>
+        <div>
+        <h1>Studio</h1>
+        <p></p>
+        </div>
         </>
      );
 }
