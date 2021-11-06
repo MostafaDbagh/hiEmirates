@@ -31,8 +31,10 @@ height:450px;
 @media(max-width:670px){
     width:88%;
     height:350px;
-    
     margin:0 0 0 auto;
+    position:relative;
+
+
 }
 
 `

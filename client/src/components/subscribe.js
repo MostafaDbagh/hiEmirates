@@ -3,7 +3,7 @@ import { useState } from 'react';
 import{Div,Anchorsocial,Li,Registerinput,Textare,Button} from '../style/subscribestyle'
 import axios from 'axios';
 import Joi from "joi-browser";
-
+import { Icon } from '../style/rent';
 
 const Subscribe = () => {
 
@@ -98,10 +98,10 @@ const Subscribe = () => {
               <strong>  وسائل التواصل الاجتماعي :
               </strong>
               </p>
-                <Li><Anchorsocial  href="#">صفحتنا على الفيس بوك</Anchorsocial>   </Li>
-                <Li><Anchorsocial style={{fontFamily: 'Teko, sans-serif',fontSize:"18px",letterSpacing:'2px'}}  href="tel:+971586057772">971586057772+</Anchorsocial></Li>
-                <Li><Anchorsocial  style={{fontFamily: 'Teko, sans-serif',fontSize:"18px",letterSpacing:'1px'}} href="mailto:mostafadbagh52@gamil.com">MostafaDbagh52@gmail.com</Anchorsocial></Li>
-                <Li><Anchorsocial   href="#">عنوان مكتبنا</Anchorsocial></Li>
+                <Li> <Icon className="lab la-facebook-f"></Icon> <Anchorsocial  href="#">صفحتنا على الفيس بوك</Anchorsocial> </Li>
+                <Li><Icon className="las la-mobile"></Icon><Anchorsocial style={{fontFamily: 'Teko, sans-serif',fontSize:"18px",letterSpacing:'2px'}}  href="tel:+971586057772">971586057772+</Anchorsocial></Li>
+                <Li><Icon className="lar la-envelope"></Icon><Anchorsocial  style={{fontFamily: 'Teko, sans-serif',fontSize:"18px",letterSpacing:'1px'}} href="mailto:mostafadbagh52@gamil.com">MostafaDbagh52@gmail.com</Anchorsocial></Li>
+                <Li><Icon className="las la-map-marker"></Icon><Anchorsocial   href="#">عنوان مكتبنا</Anchorsocial></Li>
                 </ul>
             </div>
         </Div>
