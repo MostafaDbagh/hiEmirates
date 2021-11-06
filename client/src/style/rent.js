@@ -25,6 +25,18 @@ margin:8px 0;
 
 `
 
+export const Sectionimg = styled.section `
+width:370px;
+height:450px;
+@media(max-width:670px){
+    width:88%;
+    height:350px;
+    
+    margin:0 0 0 auto;
+}
+
+`
+
 export const Icon = styled.i`
 font-size:28px;
 margin: 0 8px;

@@ -4,15 +4,16 @@ import master from '../assests/image/masterbedroom.jpg'
 import Partition from '../assests/image/partition.jpg'
 import studio from '../assests/image/studio.jpg'
 
-import {List,Icon,Ul,Span,H1,P} from './../style/rent'
+import {List,Icon,Ul,Span,H1,P,Sectionimg} from './../style/rent'
 const Rent = () => {
     return ( 
         <div style={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column',marginTop:'64px'}}>
        
         <div style={{display:'flex',marginBottom:'32px',justifyContent:'space-between',flexWrap:'wrap'}}>
-            <section >
-                <img width="300" height="70%" alt="beb sapce image" src={bed}/>
-                </section>
+            <Sectionimg >
+                <img width="90%" height="80%" alt="beb sapce image" style={{objectFit:'cover'}} src={bed}/>
+                </Sectionimg>
+
                 <section style={{width:"500px",margin:"0 32px"}}>
         <H1> :(Bed Space)مساحة تخت  </H1>
         <P>وهي ان تقوم باستئجار تخت في غرفة بحيث سيكون معك عدة اشخاص من مختلف الجنسيات وسيكون عندك خزانة خاصة فيك وسيكون الحمام والمطبخ  مشترك بين الجميع  </P>
@@ -28,9 +29,10 @@ const Rent = () => {
         </div>
 
         <div style={{display:'flex',justifyContent:'space-between',marginBottom:'32px',flexWrap:'wrap'}}>
-        <section>
-        <img width="300" height="70%" alt="beb sapce image" src={Partition}/>
-                </section>
+        <Sectionimg>
+        <img width="90%" height="80%" alt="beb sapce image"style={{objectFit:'cover'}} src={Partition}/>
+                </Sectionimg>
+
                 <section style={{width:"500px",margin:"0 32px"}}>
         <H1>:(Partition) بارتشن</H1>
         <P> عبارة عن شقة يتم تقسيمها لغرف صغيرة يمكن الشقة الواحدة ان تحتوي على 7 بارتشن او اكثر</P>
@@ -47,9 +49,10 @@ const Rent = () => {
         </div>
 
           <div style={{display:'flex',marginBottom:'16px',flexWrap:'wrap'}}>
-        <section>
-        <img width="300" height="70%" alt="beb sapce image" src={master}/>
-                </section>
+        <Sectionimg>
+        <img width="90%" height="80%" alt="beb sapce image" style={{objectFit:'cover'}} src={master}/>
+                </Sectionimg>
+
                 <section style={{width:"500px"}}>
         <H1>:(Master Bedroom)ماستر بيد رووم</H1>
       
@@ -67,9 +70,10 @@ const Rent = () => {
         </div>
 
         <div style={{display:'flex',marginBottom:'48px',flexWrap:'wrap'}}>
-        <section>
-        <img width="300" height="70%" alt="beb sapce image" src={studio}/>
-                </section>
+        <Sectionimg>
+        <img width="90%" height="80%" alt="beb sapce image" style={{objectFit:'cover'}} src={studio}/>
+                </Sectionimg>
+
                 <section style={{width:"500px"}}>
         <H1> :(Studio) استديو</H1>
         <P> عبارة عن غرفة كبيرة اكثر ما يميزها انها تحتوي على حمام خاص  ومطبخ خاص</P>
