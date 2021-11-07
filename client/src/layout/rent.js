@@ -1,12 +1,54 @@
-import React from 'react';
+import React,{useState} from 'react';
 import bed from '../assests/image/bed space.jpg'
 import master from '../assests/image/masterbedroom.jpg'
 import Partition from '../assests/image/partition.jpg'
 import studio from '../assests/image/studio.jpg'
-
-import {List,Icon,Ul,Span,H1,P,Sectionimg} from './../style/rent'
+import{Div,Anchorsocial,Li,Registerinput,Textare,Button,Registerselect} from '../style/subscribestyle'
+import {List,Icon,Ul,Span,H1,P,Sectionimg,Option,Form} from './../style/rent'
 const Rent = () => {
+
+<h2 style={{ color:'white',textAlign:'start',width:'30%',marginRight:'12px',fontFamily: 'Almarai, sans-serif'}}> استأجر معنا  </h2>
     return ( 
+        <>
+          <div>
+              <div style={{width:'100%',height:'64px'}}></div>
+              <div style={{display:'flex',flexDirection:'column',background:'black'}}>
+              <h2 style={{ color:'white',textAlign:'end',width:'92%',fontFamily: 'Almarai, sans-serif'}}> استأجر معنا  </h2> 
+        <Form >
+    
+        
+       
+          
+
+        <Button small  > ارسال</Button>
+         <div style={{display:'flex',margin:"12px 0"}}>
+                <Registerinput  type="text" placeholder="اقل قيمة" style={{margin:'0 4px',width:'100px'}}   />
+                <Registerinput  type="text" placeholder="اعلى قيمة"  style={{margin:'0 4px',width:'100px'}}   />
+                </div>
+                <Registerinput small type="text" placeholder="ادخل   المنطقة "   style={{margin:'0 12px'}}   />
+
+        <Registerselect small>
+            <Option value="bedspace">استئجار تخت</Option>
+            <Option value="partition">استئجار بارتشن</Option>
+            <Option value="master-bedroom"> ماستر بيد رروم</Option>
+            <Option value="studio">استئجار استديو</Option >
+        </Registerselect>
+         
+     <Registerselect small >
+            <Option value="dubai">دبي</Option>
+            <Option value="sharjaha">شارقة</Option>
+            <Option value="Abu Dhabi">ابو ظبي</Option>
+            <Option value="Ajman">عجمان</Option>
+            <Option value="Fujeira">فجيرة</Option>
+            <Option value="umm quein">ام القيوين</Option>
+    </Registerselect>
+   
+    
+         
+   
+</Form>
+</div>
+        </div>
         <div style={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column',marginTop:'64px'}}>
        
         <div style={{display:'flex',marginBottom:'32px',justifyContent:'space-between',flexWrap:'wrap'}}>
@@ -91,6 +133,9 @@ const Rent = () => {
         </section>
         </div>
         </div>
+      
+    
+        </>
      );
 }
  

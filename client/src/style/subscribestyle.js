@@ -52,13 +52,29 @@ font-family: 'El Messiri', sans-serif;
 margin-top:16px;
 `
 export const Registerinput = styled.input`
-width:280px;
+direction:rtl;
+width:${props => props.small ? '220':'280'}px;
 height:27px;
 padding:6px 12px;
 margin:6px 0;
 &::placeholder{
     font-family: 'El Messiri', sans-serif;
 }
+@media(max-width:670px){
+    width:75%;
+}
+`
+export const Registerselect = styled.select`
+direction:rtl;
+width:${props => props.small ? '220':'280'}px;
+height:43px;
+padding:6px 18px;
+margin:6px 16px;
+font-family: 'El Messiri', sans-serif;
+@media(max-width:670px){
+    width:80%;
+}
+
 `
 export const Textare= styled.textarea`
 width:286px;
@@ -104,16 +120,17 @@ margin:8px
 padding:15px;
 `
 export const Button = styled.button`
-width:300px;
-height:40px;
+width:${props =>props.small ? '100':'300'}px;
+height:${props =>props.small ? '45':'45'}px;;
 padding:6px 12px;
-margin:8px 0 12px;
+margin:${props =>props.small ? '8px 12px 12px 12px':'8px 0 12px '};
 background: rgb(10,183,255);
 border:none;
 color:white;
 font-family: Almarai, sans-serif;
 font-size:18px;
 font-weight:600;
+border-radius:20px;
 &:hover{
     
     cursor:pointer;

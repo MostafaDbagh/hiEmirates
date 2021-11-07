@@ -38,6 +38,11 @@ height:450px;
 }
 
 `
+export const Option = styled.option`
+font-family: 'Almarai', sans-serif;
+
+
+`
 
 export const Icon = styled.i`
 font-size:28px;
@@ -47,4 +52,18 @@ text-aling:end;
 `
 export const Span = styled.span`
 font-family: 'Almarai', sans-serif;
+`
+export const Form =styled.form`
+
+display:flex;
+flex-direction:row;
+align-items:center;
+margin-left:auto;
+background:black;
+flex-wrap:wrap;
+@media(max-width:670px){
+    flex-direction:column-reverse;
+    margin-left:0;
+    
+}
 `
