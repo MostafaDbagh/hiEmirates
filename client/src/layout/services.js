@@ -35,7 +35,7 @@ const Services = () => {
     <div style={{display:'flex',flexDirection:'column',direction:'rtl'}}>
         <Label>نوع السيارة</Label>
         <Select type="text" placeholder="الرجاء ادخال نوع السيارة">
-            <option></option>
+            <option>غير مهم النوع </option>
             <option></option>
             <option></option>
             </Select>
