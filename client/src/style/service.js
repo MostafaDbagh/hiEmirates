@@ -19,6 +19,7 @@ direction:rtl;
 padding:24px;
 margin-right:4px;
 font-weight:bold;
+line-height:26px;
 `
 export const Select = styled.select`
 width:340px;
