@@ -20,13 +20,8 @@ const News = () => {
     return ( 
 
         <>
-        <h1>Last News</h1>
-        {/* {post.map(i=>
-         <div>
-         <h2>{i.title}</h2>
-         <p>{i.post}</p>
-         </div>
-            )} */}
+    
+      
        
      
 
