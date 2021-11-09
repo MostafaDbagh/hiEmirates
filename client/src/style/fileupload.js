@@ -10,7 +10,6 @@ background:#e8ebe7;
 `
 export const Div = styled.div`
 width:600px;
-
 margin:24px auto 16px;
 `
 export const Form = styled.form`
