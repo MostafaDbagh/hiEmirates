@@ -28,6 +28,15 @@ route.get('/getAlluser',(req,res)=>{
           res.json({result})
         })
 })
+
+route.get('/getAllposts',(req,res)=>{
+  let sql = "select * from posts"
+ 
+   db.query(sql, (err, result) => {
+            if (err) throw err
+          res.json({result})
+        })
+})
 route.post('/createpost',(req,res)=>{
 
     let post = req.body.text;

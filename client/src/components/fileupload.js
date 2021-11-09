@@ -51,7 +51,7 @@ const FileUpload =()=>{
    data.append('Personalimage',file);
    data.append('FPP',pp);
    data.append('BPP',Bpp);
-   axios.post('https://hellouae.herokuapp.com/adduser',data)
+   axios.post('http://localhost:4000/adduser',data)
   setIsclicked(true)
    setText({
     name:'',
