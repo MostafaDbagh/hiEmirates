@@ -24,7 +24,7 @@ line-height:26px;
 export const Select = styled.select`
 width:340px;
 height:60px;
-padding:8px 16px;
+padding:8 px 16px;
 margin:0 24px 12px 0;
 
 `
